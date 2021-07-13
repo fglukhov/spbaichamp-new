@@ -11,7 +11,7 @@ $(window).on("scroll touchmove", function() {
 	}
 
 	$("a[name]").each(function() {
-		if (scrollPos > $(this).offset().top - yDiff - 100) {
+		if (scrollPos > $(this).closest(".section").offset().top - yDiff - 100) {
 			$(".navbar-nav a").removeClass("active");
 			$(".navbar-nav a[href='#" + $(this).attr("name") + "']").addClass("active");
 		}

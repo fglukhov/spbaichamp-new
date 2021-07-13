@@ -878,13 +878,18 @@ table.prize-table td.val {
 .prize-ind-descr {
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -16px; }
+  margin: 0 -16px;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
 
 .prize-ind-text {
   padding: 0 16px;
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-top: -5px; }
+
+.prize-ind-text p {
+  max-width: 500px; }
 
 .prize-ind-num {
   padding: 0 16px;
@@ -1144,13 +1149,11 @@ a.footer-link:hover {
     opacity: 1; }
   .header-content {
     padding: 0 60px 0 0; }
-  .navbar-wrapper .header-logo {
-    display: block; }
   .navbar-wrapper-inner {
     min-height: 100%;
     padding: 28px 32px; }
   ul.navbar-nav {
-    margin: 127px 0 0 30px;
+    margin: 153px 0 0 30px;
     display: block;
     font-weight: bold;
     font-size: 56px;
@@ -1273,7 +1276,10 @@ a.footer-link:hover {
   .footer-link-pic {
     margin: 0 16px 0 0; }
   .menu-open {
-    overflow: hidden; } }
+    overflow: hidden; }
+  .header-logo {
+    position: relative;
+    z-index: 500; } }
 
 @media (max-width: 767px) {
   #mobile-indicator {
@@ -1304,7 +1310,7 @@ a.footer-link:hover {
   ul.navbar-nav {
     font-size: 28px;
     line-height: 36px;
-    margin: 65px 0 0 24px; }
+    margin: 89px 0 0 24px; }
   ul.navbar-nav > li {
     margin: 0 0 24px 0; }
   main {
