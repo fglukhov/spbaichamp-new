@@ -30,25 +30,7 @@ $(window).on("scroll touchmove", function() {
 
 });
 
-$(window).resize(function () {
-
-	slickResponsive();
-
-	$(".slick-slider").slick("setPosition");
-
-});
-
 $(document).ready(function() {
-
-	slickResponsive();
-
-	$(".video-poster").click(function () {
-
-		$(this).closest(".video").find("video").get(0).play();
-
-		$(this).fadeOut(250);
-
-	});
 
 	$(".header-logo a").click(function () {
 
@@ -116,7 +98,7 @@ $(document).ready(function() {
 	//
 	// });
 
-	$("body").on("click", ".navbar-nav a, .info-tmb", function() {
+	$("body").on("click", ".navbar-nav a, .header-button a", function() {
 
 		var curLink = $(this);
 
@@ -127,7 +109,7 @@ $(document).ready(function() {
 		}
 
 		$("html,body").animate({
-			scrollTop: $("a[name='" + curLink.attr("href").replace("#","") + "']").offset().top - yDiff - 30
+			scrollTop: $("a[name='" + curLink.attr("href").replace("#","") + "']").offset().top - yDiff - 50
 		},1000,function () {
 			//curLink.addClass("active")
 		});
@@ -138,12 +120,12 @@ $(document).ready(function() {
 
 	// Countdown
 
-	var endDate = new Date(2021, 8, 7, 0, 0, 0, 0);
+	var endDate = new Date(2021, 5, 7, 0, 0, 0, 0);
 
 	$(".countdown").each(function() {
 		$(this).countdown({
 			until: endDate,
-			layout : "<div class='cd-section cd-section-days'><span>{dnn} {dl}</span></div>"
+			layout : "<div class='cd-section cd-section-days'><div class='cd-num'>{dnn}</div><div class='cd-ttl'>{dl}</div></div><div class='cd-section cd-section-hours'><div class='cd-num'>{hnn}</div><div class='cd-ttl'>{hl}</div></div><div class='cd-section cd-section-minutes'><div class='cd-num'>{mnn}</div><div class='cd-ttl'>{ml}</div></div>"
 		});
 	});
 
@@ -256,33 +238,3 @@ function fixedHeader() {
 	};
 
 })(jQuery);
-
-function slickResponsive() {
-
-	if ($("#mobile-indicator").css("display") == "block") {
-
-		if (!$(".stages-list .row").hasClass("slick-initialized")) {
-
-			$(".stages-list .row").slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: false,
-				speed: 500,
-				rows: 0
-			});
-
-		}
-
-
-
-	} else {
-
-		if ($(".stages-list .row").hasClass("slick-initialized")) {
-			$(".stages-list .row").slick("unslick");
-		}
-
-
-
-	}
-
-}

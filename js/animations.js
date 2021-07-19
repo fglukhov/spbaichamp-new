@@ -64,7 +64,7 @@ function animateAll() {
 
 		});
 
-		$(".info-tmb").each(function (index, element) {
+		$(".champ-list .col").each(function (index, element) {
 
 			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
 				x: 0,
@@ -73,12 +73,12 @@ function animateAll() {
 				scale: 1,
 				ease: Sine.easeOut,
 				// overwrite: "none",
-				delay: 2 + $(element).data("anim-index") * .5 * animMultiplier
+				delay: $(element).prevAll(".col").length * .5 * animMultiplier
 			});
 
 			let elScene = new ScrollMagic.Scene({
-				triggerElement: element.closest(".section-top"),
-				offset: -200,
+				triggerElement: element.closest(".section"),
+				offset: 0,
 				reverse: false
 			})
 				.setTween(elTween)
@@ -94,12 +94,12 @@ function animateAll() {
 				opacity: 1,
 				ease: Sine.easeOut,
 				// overwrite: "none",
-				delay: $(element).data("anim-index") * .5 * animMultiplier
+				delay: $(element).prevAll().length * .7 * animMultiplier
 			});
 
 			let elScene = new ScrollMagic.Scene({
-				triggerElement: element.closest(".stages-list"),
-				offset: -200,
+				triggerElement: element.closest(".section"),
+				offset: 0,
 				reverse: false
 			})
 				.setTween(elTween)
@@ -108,21 +108,20 @@ function animateAll() {
 
 		});
 
-		$(".criteria-tmb").each(function (index, element) {
+		$(".prizes-fund").each(function (index, element) {
 
 			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
 				x: 0,
 				y: 0,
 				opacity: 1,
-				scale: 1,
 				ease: Sine.easeOut,
 				// overwrite: "none",
-				delay: $(element).data("anim-index") * .5 * animMultiplier
+				delay: 0
 			});
 
 			let elScene = new ScrollMagic.Scene({
 				triggerElement: element.closest(".section"),
-				offset: -200,
+				offset: 0,
 				reverse: false
 			})
 				.setTween(elTween)
@@ -131,53 +130,89 @@ function animateAll() {
 
 		});
 
-		$(".prizes-list .anim").each(function (index, element) {
+		$(".prizes-wrapper .anim").each(function (index, element) {
 
 			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
-				x: 0,
 				y: 0,
 				opacity: 1,
 				scale: 1,
 				ease: Sine.easeOut,
 				// overwrite: "none",
-				delay: $(element).data("anim-index") * .5 * animMultiplier
+				delay: $(element).data("anim-index") * .4 * animMultiplier + .5 * animMultiplier
 			});
 
 			let elScene = new ScrollMagic.Scene({
 				triggerElement: element.closest(".section"),
-				offset: -200,
+				offset: 0,
 				reverse: false
 			})
 				.setTween(elTween)
 				.addTo(controller);
 
-
 		});
 
-		$(".links-list .anim").each(function (index, element) {
+		$(".prize-line").each(function (index, element) {
 
 			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
 				x: 0,
 				y: 0,
 				opacity: 1,
-				scale: 1,
 				ease: Sine.easeOut,
 				// overwrite: "none",
-				delay: $(element).data("anim-index") * .5 * animMultiplier
+				delay: 0
 			});
 
 			let elScene = new ScrollMagic.Scene({
 				triggerElement: element.closest(".section"),
-				offset: -200,
+				offset: 0,
 				reverse: false
 			})
 				.setTween(elTween)
 				.addTo(controller);
 
+		});
+
+		$(".prizes-col").each(function (index, element) {
+
+			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
+				x: 0,
+				y: 0,
+				opacity: 1,
+				ease: Sine.easeOut,
+				// overwrite: "none",
+				delay: $(element).data("index") * .7 * animMultiplier + .7 * animMultiplier
+			});
+
+			let elScene = new ScrollMagic.Scene({
+				triggerElement: element.closest(".section"),
+				offset: 0,
+				reverse: false
+			})
+				.setTween(elTween)
+				.addTo(controller);
 
 		});
 
+		$(".timer-wrapper *[data-index]").each(function (index, element) {
 
+			let elTween = TweenMax.to($(element), .7 * animMultiplier, {
+				x: 0,
+				y: 0,
+				opacity: 1,
+				ease: Sine.easeOut,
+				// overwrite: "none",
+				delay: $(element).attr("data-index") * .7 * animMultiplier
+			});
+
+			let elScene = new ScrollMagic.Scene({
+				triggerElement: element.closest(".section"),
+				offset: 0,
+				reverse: false
+			})
+				.setTween(elTween)
+				.addTo(controller);
+
+		});
 
 
 
