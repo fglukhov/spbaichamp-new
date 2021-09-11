@@ -1034,6 +1034,136 @@ a.footer-link:hover {
 .footer-link-pic {
   margin: 0 20px 0 0; }
 
+.telegram-popup {
+  position: fixed;
+  z-index: 900;
+  right: 64px;
+  bottom: 64px;
+  width: 64px;
+  height: 64px; }
+
+.telegram-popup-trigger {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #142664;
+  cursor: pointer; }
+
+.telegram-popup-trigger:before {
+  content: "";
+  background: url(../images/telegram-trigger.svg) 0 0 no-repeat;
+  width: 29px;
+  height: 34px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -18px 0 0 -15px;
+  transition: all .15s ease; }
+
+.telegram-popup-content {
+  width: 360px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  display: none; }
+
+.telegram-popup-content:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: -4px;
+  top: 4px;
+  bottom: -4px;
+  background: #00E6B3;
+  border-radius: 32px; }
+
+.telegram-popup-content-inner {
+  background: #142664;
+  border-radius: 32px;
+  position: relative;
+  padding: 20px 25px 23px 25px; }
+
+.telegram-popup-link-wrapper {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 17px 0 0 0; }
+
+.telegram-popup-link {
+  display: inline-block;
+  padding: 0 0 0 39px;
+  position: relative;
+  color: #FF2E93 !important;
+  text-decoration: none !important; }
+
+.telegram-popup-link-ico {
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 1px; }
+
+.telegram-popup-link-ico:before {
+  content: "";
+  background: url(../images/telegram-ico-popup.svg) 0 0 no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.telegram-popup h3,
+.telegram-popup .h3 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 40px 12px 0;
+  color: #fff; }
+
+.telegram-popup-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer; }
+
+.telegram-popup-close:before {
+  content: "";
+  background: url(../images/telegram-popup-close.svg) 0 0 no-repeat;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 5px;
+  top: 5px; }
+
+@media (min-width: 768px) {
+  .telegram-popup-trigger:after {
+    content: "";
+    background: url(../images/telegram-trigger-active.svg) 0 0 no-repeat;
+    width: 29px;
+    height: 34px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -18px 0 0 -15px;
+    transition: all .15s ease;
+    opacity: 0; }
+  .telegram-popup-trigger:hover:before {
+    opacity: 0; }
+  .telegram-popup-trigger:hover:after {
+    opacity: 1; } }
+
+.telegram-popup-mob {
+  display: none; }
+
 #md-indicator {
   display: none; }
 
@@ -1111,7 +1241,7 @@ a.footer-link:hover {
     right: 0;
     top: 0;
     bottom: 0;
-    background: #00E6B3;
+    background: #fff;
     overflow: auto;
     margin: 0;
     z-index: 400; }
@@ -1509,7 +1639,40 @@ a.footer-link:hover {
   .footer-links-item {
     margin-bottom: 25px; }
   .footer-links-item:last-child {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .telegram-popup {
+    display: none; }
+  .telegram-popup-mob {
+    display: block;
+    background: #142664;
+    border-radius: 32px;
+    color: #fff;
+    margin: 30px -10px 0 -10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 24px 25px 32px 25px; }
+  .navbar-wrapper-inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 32px; }
+  .telegram-popup-mob h3,
+  .telegram-popup-mob .h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 40px 12px 0;
+    color: #fff; }
+  .telegram-popup-link-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 33px 0 0 0; } }
 
 @media (max-width: 767px) {
   .prizes-wrapper .anim,

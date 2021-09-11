@@ -32,6 +32,38 @@ $(window).on("scroll touchmove", function() {
 
 $(document).ready(function() {
 
+	// Telegram popup
+
+	$(".telegram-popup-trigger").click(function () {
+
+		$(this).fadeOut(150);
+
+		$(".telegram-popup-content").fadeIn(150);
+
+	});
+
+	$(".telegram-popup-close").click(function () {
+
+		$(".telegram-popup-trigger").fadeIn(150);
+
+		$(".telegram-popup-content").fadeOut(150);
+
+	});
+	
+	$("body").on("click", function (e) {
+		
+		if ($(".telegram-popup-content").css("display") == "block" && !$(e.target).hasClass("telegram-popup") && !$(e.target).parents().hasClass("telegram-popup") && !$(e.target).hasClass("telegram-popup-close") && !$(e.target).parents().hasClass("telegram-popup-close")) {
+			
+			$(".telegram-popup-trigger").fadeIn(150);
+
+			$(".telegram-popup-content").fadeOut(150);
+			
+		}
+		
+	});
+
+	// Telegram popup END
+
 	$(".header-logo a").click(function () {
 
 		$("html, body").animate({
