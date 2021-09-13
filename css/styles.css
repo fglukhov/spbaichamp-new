@@ -1164,6 +1164,9 @@ a.footer-link:hover {
 .telegram-popup-mob {
   display: none; }
 
+.telegram-mob {
+  display: none; }
+
 #md-indicator {
   display: none; }
 
@@ -1672,7 +1675,15 @@ a.footer-link:hover {
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
-    margin: 33px 0 0 0; } }
+    margin: 33px 0 0 0; }
+  .telegram-mob {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: fixed;
+    background: url(../images/telegram-mob.svg) 0 0 no-repeat;
+    right: 80px;
+    top: 20px; } }
 
 @media (max-width: 767px) {
   .prizes-wrapper .anim,
