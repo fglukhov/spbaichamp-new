@@ -1680,10 +1680,12 @@ a.footer-link:hover {
     width: 32px;
     height: 32px;
     display: block;
-    position: fixed;
+    position: absolute;
     background: url(../images/telegram-mob.svg) 0 0 no-repeat;
     right: 80px;
-    top: 20px; } }
+    top: 20px; }
+  .header-fixed .telegram-mob {
+    top: 11px; } }
 
 @media (max-width: 767px) {
   .prizes-wrapper .anim,
